@@ -1,94 +1,87 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Title of project goes here
+# DJ Helper
 
-You can find the project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+You can find the project at [www.dj-helper.com](https://www.dj-helper.com).
 
-## 5️⃣ Contributors
+## Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
+|                                       [Jordan Heuer](https://github.com/j-m-d-h)                                        |                                       [Mariana Dominguez](https://github.com/madinanachan)                                        |                                       [Isaac Lopez](https://github.com/lopez-isaac)                                        |                                     |                                                                               |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJQR645R8-ea8dc0f12cf6-512" width = "200" />](https://github.com/j-m-d-h)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UL44ALSSK-3e3a00d49ce2-512" width = "200" />](https://github.com/madinanachan)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UNK2RKG2H-26c2bec454b7-512" width = "200" />](https://github.com/lopez-isaac)    |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |      |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](http://linkedin.com/in/jmdh) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/isaac-lopez-ds/) |
 
 
 
-🚫 5️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+[Trello Board](https://trello.com/b/8PQ8BRod/labs-21-dj-helper)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Product Canvas](https://www.notion.so/594af78f1b344d38976c00f9e71cf048?v=d50f07ef5cdc4e61aaadd9b6208e437a)
 
-🚫 Replace lorem ipsum with a description of your project
+DJ-helper is a web application designed to help DJ's discover and create a more flavorful playlists for the event they
+are performing at. Before an event starts guests will submit music requests. With the help of machine learning the
+application will take those requests and create a unique playlist. The DJ can select songs and add them to their set.
+The application will also function in real time during the event and adjust to any changes in music trend that occur. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-🚫  delete if front end is not applicable to your project
-
-1️⃣ [Deployed Front End](🚫add link to deployed app here)
+[Deployed Front End](https://www.dj-helper.com)
 
 ### Tech Stack
 
-🚫 List all of the languages, frameworks, services, etc used here.
+Python, Dash, spotipy, spotify api
 
-### 2️⃣ Predictions
+### Predictions
 
-🚫 Describe your models here
+DJ helper uses an unsupervised k-neighbors model to predict audibly similar songs. The model uses spotify's api to
+obtain a list of similar artists and then uses the musical features spotify provides to find the closest sounding track. 
 
-### 2️⃣ Explanatory Variables
-
--   Explanatory Variable 1
--   Explanatory Variable 2
--   Explanatory Variable 3
--   Explanatory Variable 4
--   Explanatory Variable 5
 
 ### Data Sources
-🚫  Add to or delete souce links as needed for your project
 
 
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
+-   [Spotipy](https://spotipy.readthedocs.io/en/2.9.0/)
+-   [Spotify API](https://developer.spotify.com/documentation/web-api/)
+
 
 ### Python Notebooks
 
-🚫  Add to or delete python notebook links as needed for your project
 
-[Python Notebook 1](🚫add link to python notebook here)
+[Python Model Notebook](https://github.com/Lambda-School-Labs/djhelper-ds/blob/feature/Recommendation_Machine_V3.ipynb)
 
-[Python Notebook 2](🚫add link to python notebook here)
+[Python Visual Notebook](https://github.com/Lambda-School-Labs/djhelper-ds/blob/visuals_canvas/radar%20function.ipynb)
 
-[Python Notebook 3](🚫add link to python notebook here)
+[Python Dash App Notebook](🚫add link to python notebook here)
 
-### 3️⃣ How to connect to the web API
 
-🚫 List directions on how to connect to the API here
+### How to connect to the data API
 
-### 3️⃣ How to connect to the data API
+1. First you will need to Apply for spotify developer account to obtain API keys
+2. replicate this code and your set to go 
+    
+    client_id = "Your token key" \
+    client_secret = "Your token key"
+    
+    credentials = oauth2.SpotifyClientCredentials(
+    client_id=client_id,
+    client_secret=client_secret)
 
-🚫 List directions on how to connect to the API here
+    token = credentials.get_access_token()
+    sp = spotipy.Spotify(auth=token)
+    sp.trace = False
+    
+    
+
+
+
 
 ## Contributing
 
@@ -128,7 +121,7 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/djhelper-be/blob/master/README.md) for details on the backend of our project.
 
-See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.
+See [Front End Documentation](https://github.com/Lambda-School-Labs/djhelper-fe/blob/master/README.md) for details on the front end of our project.
 
