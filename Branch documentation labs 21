@@ -1,0 +1,29 @@
+#End of Labs 21 Documentation
+
+###Purpose
+The purpose of this canvas is to provide visual insight on the models prediction for the DJ. It takes time to listen and 
+compare two songs so having a visual would speed things up and give the DJ a quick summary of the feel of the music.
+
+###Future plans
+Since data science is working more in depth with the spotify data it makes that we make the visual. However when it
+comes to visuals, python has limited packages therefore it is recommended that the web team create a more eye pleasing
+visual. What data science created for this release canvas is the most compact and simple to understand representation of
+the data. 
+  
+###Radar Chart
+After many iterations the best visual type the team concluded was the radar chart also known as spider charts. 
+The final product for this canvas can be found in the file called [radar function.ipynb](https://github.com/Lambda-School-Labs/djhelper-ds/blob/visuals_canvas/radar%20function.ipynb)
+The plot was created using plotly. As of right now all that is needed for the parameters of the function are the spotify uri id's for the searched and 
+recomended track the model outputs. 
+
+####Obtaining Spotify Track ID's
+The uri can be found from the browser url link of the track or from the desktop
+spotify app. Right click on the track, got to share, and select copy spotify uri.
+
+###Brainstorming
+All the other files in this branch showcase the thought processcess, trial and error discovered. 
+[visuals_og.ipynb](https://github.com/Lambda-School-Labs/djhelper-ds/blob/visuals_canvas/visuals_og.ipynb) and [visuals.ipynb](https://github.com/Lambda-School-Labs/djhelper-ds/blob/visuals_canvas/visuals.ipynb) were the first brainstorming sets.
+
+####Iterations
+[Radar chart](https://github.com/Lambda-School-Labs/djhelper-ds/blob/visuals_canvas/Plotly%20radar.ipynb) tired to make radar chart using matplotlib didn't work out 
+then we switched to plotly for the final product
