@@ -52,8 +52,8 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 🚫  Add to or delete souce links as needed for your project
 
 
--   [Spotify_API] (https://developer.spotify.com/documentation/web-api/)
--   [Spotipy] (https://spotipy.readthedocs.io/en/2.12.0/#getting-started)
+-   [Spotify_API](https://developer.spotify.com/documentation/web-api/)
+-   [Spotipy](https://spotipy.readthedocs.io/en/2.12.0/#getting-started)
 -   [Source 3] (🚫add link to python notebook here)
 -   [Source 4] (🚫add link to python notebook here)
 -   [Source 5] (🚫add link to python notebook here)
@@ -79,12 +79,12 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
   
   print("CLIENT ID:", os.environ.get("SPOTIPY_CLIENT_ID"))
   print("CLIENT SECRET:", os.environ.get("SPOTIPY_CLIENT_SECRET"))
-
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-
-client_credentials_manager = SpotifyClientCredentials()
-sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+  
+  import spotipy
+  from spotipy.oauth2 import SpotifyClientCredentials
+  
+  client_credentials_manager = SpotifyClientCredentials()
+  sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 ## Contributing
 
