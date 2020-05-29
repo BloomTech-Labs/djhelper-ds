@@ -68,22 +68,28 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 
 ### 3️⃣ How to connect to the data API
 
-- create .env file with the keys values in your working folder
+- create .env file with the keys values in your working folder.
+  
   SPOTIPY_CLIENT_ID="your_client_ID"
+
   SPOTIPY_CLIENT_SECRET="your_client_secret_key"
   
   from dotenv import load_dotenv
+
   import os
   
 - you can check your keys variables before running API client credentials.
   
   print("CLIENT ID:", os.environ.get("SPOTIPY_CLIENT_ID"))
+
   print("CLIENT SECRET:", os.environ.get("SPOTIPY_CLIENT_SECRET"))
   
   import spotipy
+
   from spotipy.oauth2 import SpotifyClientCredentials
   
   client_credentials_manager = SpotifyClientCredentials()
+
   sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 ## Contributing
