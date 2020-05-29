@@ -1,20 +1,12 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
 # 1️⃣ DJ Helper
 
 You can find the project at [https://www.dj-helper.com/](https://www.dj-helper.com/).
 
 ## 2️⃣ Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
 |                                       [Evgenii Dudeiko](https://github.com/Edudeiko)                                        |                                       [Maxwell Kwarteng](https://github.com/maxim371)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |  
-|                      [<img src="https://i.ibb.co/MsbFVHQ/linkedin-pic.jpg" width = "200" />](https://github.com/Edudeiko)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/maxim371)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
+|                      [<img src="https://i.ibb.co/MsbFVHQ/linkedin-pic.jpg" width = "200" />](https://github.com/Edudeiko)                       |                      [<img src="https://i.ibb.co/2kYGL7W/max.jpg" width = "200" />](https://github.com/maxim371)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Edudeiko)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/maxim371)             |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ed-dudeiko-06384a195/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/maxwell-kwarteng-b08459b7/) |
 
@@ -35,59 +27,64 @@ You can find the project at [https://www.dj-helper.com/](https://www.dj-helper.c
 
 1️⃣ [Product Canvas](https://www.notion.so/594af78f1b344d38976c00f9e71cf048?v=d50f07ef5cdc4e61aaadd9b6208e437a)
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-🚫  delete if front end is not applicable to your project
-
-1️⃣ [Deployed Front End](🚫add link to deployed app here)
+DJ-helper is a web and IOS application designed to help a DJ get suggestions based on the songs requested by the event audience, so that he can create a playlist that the audience is very likely to like. Before and during the event guests will submit music requests. With the help of machine learning the application will take those requests and create a unique playlist. The DJ can select songs and add them to their set. The application will also function in real time during the event and adjust to any changes in music trend that occur.
 
 ### Tech Stack
 
-Python, Dash, Spotipy, Spotify API, Heroku.
+Python, Dash, Spotipy, Spotify API, Heroku, Plotly
 
 ### 2️⃣ Predictions
 
-🚫 Describe your models here
+DJ helper uses an unsupervised k-neighbors model to predict similar songs. The model uses spotify's api to obtain a list of similar artists and then uses the audio features spotify provides to find the closest sounding track.
 
 ### 2️⃣ Explanatory Variables
 
--   Explanatory Variable 1
--   Explanatory Variable 2
--   Explanatory Variable 3
--   Explanatory Variable 4
--   Explanatory Variable 5
+- acousticness
+- danceability
+- energy
+- instrumentalness
+- liveness
+- loudness
+- speechiness
+- tempo
 
 ### Data Sources
 🚫  Add to or delete souce links as needed for your project
 
 
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
+-   [Spotify_API] (https://developer.spotify.com/documentation/web-api/)
+-   [Spotipy] (https://spotipy.readthedocs.io/en/2.12.0/#getting-started)
 -   [Source 3] (🚫add link to python notebook here)
 -   [Source 4] (🚫add link to python notebook here)
 -   [Source 5] (🚫add link to python notebook here)
 
 ### Python Notebooks
 
-🚫  Add to or delete python notebook links as needed for your project
-
-[Python Notebook 1](🚫add link to python notebook here)
+[Create_Dataset](https://github.com/Lambda-School-Labs/djhelper-ds/blob/master/update_dataset.ipynb)
 
 [Python Notebook 2](🚫add link to python notebook here)
 
 [Python Notebook 3](🚫add link to python notebook here)
 
-### 3️⃣ How to connect to the web API
-
-🚫 List directions on how to connect to the API here
-
 ### 3️⃣ How to connect to the data API
 
-🚫 List directions on how to connect to the API here
+- create .env file with the keys values in your working folder
+  SPOTIPY_CLIENT_ID="your_client_ID"
+  SPOTIPY_CLIENT_SECRET="your_client_secret_key"
+  
+  from dotenv import load_dotenv
+  import os
+  
+- you can check your keys variables before running API client credentials.
+  
+  print("CLIENT ID:", os.environ.get("SPOTIPY_CLIENT_ID"))
+  print("CLIENT SECRET:", os.environ.get("SPOTIPY_CLIENT_SECRET"))
+
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
+client_credentials_manager = SpotifyClientCredentials()
+sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 ## Contributing
 
