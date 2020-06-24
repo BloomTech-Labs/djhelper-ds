@@ -58,7 +58,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
+# db.sqlite3
 db.sqlite3-journal
 
 # Flask stuff:
@@ -142,3 +142,4 @@ df_finale_db.sqlite3
 final_df.json
 result_2.json
 df_prepare.csv
+json_df_reduced.json
