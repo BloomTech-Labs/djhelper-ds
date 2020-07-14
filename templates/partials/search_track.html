@@ -1,0 +1,34 @@
+<table class="table search_table">
+
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Popularity [0, 100]</th>
+      </tr>
+    </thead>
+
+    {% for track in results %}
+    <tr>
+
+      <td>
+        <a href="{{ track.external_urls.spotify }}"> {{ track.name }} </a>
+      </td>
+
+      <td>
+        {% for artist in track.artists %}
+          <a href="{{ url_for('artist', id=artist.id) }}"> {{ artist.name }} </a>
+        {% endfor %}
+      </td>
+
+      <td class="number">
+        <a href="{{ track.external_urls.spotify }}"> {{ track.album.name }} </a>
+      </td>
+
+      <td class="number">{{ track.popularity }}</td>
+
+    </tr>
+    {% endfor %}
+
+  </table>
