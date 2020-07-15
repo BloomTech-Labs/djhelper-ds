@@ -17,9 +17,9 @@ import sys
 MAX_RESULT = 20
 
 # Spotify credentials
-SPOTIFY_USERNAME = 'eddie82-us'
-CLIENT_ID = '1544e44f656f402894c4b6b4c0efdf9b'
-CLIENT_SECRET = '0681b6fa2930480fbcfe9a31a8e05bae'
+SPOTIFY_USERNAME = 'XxxX'
+CLIENT_ID = 'XxxX'
+CLIENT_SECRET = 'XxxX'
 SCOPE = 'playlist-modify-private'
 
 
@@ -29,8 +29,8 @@ load_dotenv()
 client_credentials_manager = SpotifyClientCredentials()
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-spotify_client_id = '1544e44f656f402894c4b6b4c0efdf9b'
-spotify_client_sectret = '0681b6fa2930480fbcfe9a31a8e05bae'
+spotify_client_id = 'XxxX'
+spotify_client_sectret = 'XxxX'
 
 
 data = {'grant_type': 'client_credentials'}
