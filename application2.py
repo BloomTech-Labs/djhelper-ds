@@ -125,4 +125,4 @@ def featured_playlists():
 if __name__ == "__main__":
     app.run(debug=True, port=spotify.PORT)
 
-# FLASK_APP=app2.py flask run
+# FLASK_APP=application2.py flask run

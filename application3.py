@@ -10,6 +10,18 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 import json
 
+import spotipy.util as util
+import sys
+
+# Number of titles to get from each channel
+MAX_RESULT = 20
+
+# Spotify credentials
+SPOTIFY_USERNAME = 'eddie82-us'
+CLIENT_ID = '1544e44f656f402894c4b6b4c0efdf9b'
+CLIENT_SECRET = '0681b6fa2930480fbcfe9a31a8e05bae'
+SCOPE = 'playlist-modify-private'
+
 
 load_dotenv()
 
@@ -20,6 +32,13 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 spotify_client_id = '1544e44f656f402894c4b6b4c0efdf9b'
 spotify_client_sectret = '0681b6fa2930480fbcfe9a31a8e05bae'
 
+
+data = {'grant_type': 'client_credentials'}
+url = 'https://accounts.spotify.com/api/token'
+res = requests.post(url, data=data, auth=(CLIENT_ID, CLIENT_SECRET))
+    # return response.json()['access_token']
+token = res.json()['access_token']
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -27,16 +46,37 @@ def hello():
     return "Hello World!"
 
 
-def spotify_authenticate(spotify_client_id, spotify_client_sectret):
+def init_spotify_client():
+    try:
+        print('Initialising Spotify Client....')
+        token = util.prompt_for_user_token(SPOTIFY_USERNAME, SCOPE,
+                                           client_id=CLIENT_ID,
+                                           client_secret=CLIENT_SECRET,
+                                           redirect_uri='http://127.0.0.1:5000/callback/')
+        spotify_client = spotipy.Spotify(auth=token)
+        print('\nClient initialised!\n')
+        return spotify_client
+    except:
+        sys('\nError initialising Spotify Client!\n')
+
+
+
+
+def spotify_authenticate(CLIENT_ID, CLIENT_SECRET):
     data = {'grant_type': 'client_credentials'}
     url = 'https://accounts.spotify.com/api/token'
-    response = requests.post(url, data=data, auth=(spotify_client_id, spotify_client_secret))
+    response = requests.post(url, data=data, auth=(CLIENT_ID, CLIENT_SECRET))
     return response.json()['access_token']
 
 
 @app.route('/backend-search', methods=["GET"])
 def search():
-    token = spotify_authenticate()
+    # data = {'grant_type': 'client_credentials'}
+    # url = 'https://accounts.spotify.com/api/token'
+    # res = requests.post(url, data=data, auth=(CLIENT_ID, CLIENT_SECRET))
+    # # return response.json()['access_token']
+    # token = res.json()['access_token']
+
     search_url = 'https://api.spotify.com/v1/search'
     #i know i shouldnt be doing this
     search_txt = request.headers.get('search_text','')
@@ -58,10 +98,19 @@ def search():
     return json.dumps(response)
 
 
+# @app.route('/search', methods=["GET"])
+# def search():
+#     # user_input = str(request.args['lookup'])
+#     # lookup = user_input
+#     lookup = 'A lannister always pays his debts'
+#     results = sp.search(q=lookup, limit=10) #, type="track")
+#     # return jsonify(results)
+#     for i, track in enumerate(results['tracks']['items']):
+#         return jsonify(' ', i, track['name'],'-', track['artists'][0]['name'], '-', track['id'],
+#          '-', track['external_urls']['spotify'])
 
 
 
 
 
-
-# FLASK_APP=app3.py flask run
+# FLASK_APP=application3.py flask run
