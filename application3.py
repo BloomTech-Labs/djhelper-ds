@@ -114,3 +114,7 @@ def search():
 
 
 # FLASK_APP=application3.py flask run
+
+# pip freeze > requirements.txt
+# FLASK_ENV=development
+# FLASK_APP=server

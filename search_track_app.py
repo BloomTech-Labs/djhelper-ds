@@ -50,6 +50,8 @@ def search(name):
         users_response.append(user_dict)
     return jsonify(users_response)
 
+# pip freeze > requirements.txt
+
 
 if __name__ == "__main__":
     app.run(debug=True)
