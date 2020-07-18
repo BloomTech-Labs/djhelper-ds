@@ -3,7 +3,6 @@ import spotipy
 from dotenv import load_dotenv
 import os
 
-import os
 import requests
 from flask import Flask, \
     request, \
