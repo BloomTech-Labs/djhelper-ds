@@ -14,20 +14,25 @@ import json
 load_dotenv() # load environment variables
 
 
+app = Flask(__name__)
+
+
 SEARCH_ENDPOINT = 'https://api.spotify.com/v1/search'
 CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID', default="OOPS")
 CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET', default="OOPS")
 
-app = Flask(__name__)
-
-
 data = {'grant_type': 'client_credentials'}
 url = 'https://accounts.spotify.com/api/token'
 response = requests.post(url, data=data, auth=(CLIENT_ID, CLIENT_SECRET))
-token =  (response.json()['access_token'])
+token = (response.json()['access_token'])
 
 
-@app.route('/prepare_search_track/<name>')
+@app.route('/')
+def hello_world():
+    return "it's live!"
+
+
+@app.route('/prepare_search_track/<name>', methods=['GET', 'POST'])
 def search_by_name(name):
     headers = {
     'Accept': 'application/json',
@@ -41,7 +46,7 @@ def search_by_name(name):
     return resp.json()
 
 
-@app.route('/track_search_ready/<name>')
+@app.route('/track_search_ready/<name>', methods=['GET', 'POST'])
 def search(name):
     data = search_by_name(name)
     users_response = []
@@ -50,8 +55,8 @@ def search(name):
         users_response.append(user_dict)
     return jsonify(users_response)
 
-# pip freeze > requirements.txt
-
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
