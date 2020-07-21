@@ -50,7 +50,7 @@ def search(name):
     data = search_by_name(name)
     users_response = []
     for i, track in enumerate(data['tracks']['items']):
-        user_dict = (i, track['artists'][0]['name'], track['name'], track['id'], track['external_urls']['spotify'])
+        user_dict = (i, track['artists'][0]['name'], track['name'], track['id'], track['external_urls']['spotify'], track['explicit'])
         users_response.append(user_dict)
     return jsonify(users_response)
 
