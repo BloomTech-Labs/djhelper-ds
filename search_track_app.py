@@ -88,7 +88,7 @@ def audio_feat(name):
     '''apply the function'''
     _audiofeat = get_audio_features(_track_df['id'])
     
-    '''creat columns names for the dataframe'''
+    '''create columns names for the dataframe'''
     _audiofeat = pd.DataFrame(_audiofeat, columns = ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness',
     'instrumentalness', 'liveness', 'valence', 'tempo', 'type', 'id', 'uri', 'track_href', 'analysis_url', 'duration_ms', 'time_signature'])
 
