@@ -10,6 +10,9 @@ from flask import Flask, request, jsonify, Response
 import pandas as pd
 import json
 
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import NearestNeighbors
+
 load_dotenv() # load environment variables
 
 
@@ -28,6 +31,12 @@ url = 'https://accounts.spotify.com/api/token'
 response = requests.post(url, data=data, auth=(CLIENT_ID, CLIENT_SECRET))
 token = (response.json()['access_token'])
 
+headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer {}'.format(token)
+    }
+
 
 @app.route('/')
 def hello_world():
@@ -36,13 +45,9 @@ def hello_world():
 
 @app.route('/prepare_search_track/<name>', methods=['GET', 'POST'])
 def search_by_name(name):
-    headers = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer {}'.format(token)
-    }
-    myparams = {'type': 'track',
-    'limit': 10}
+    myparams = {
+        'type': 'track',
+        'limit': 10}
     myparams['q'] = name
     resp = requests.get(SEARCH_ENDPOINT, headers=headers, params=myparams)
     return resp.json()
@@ -88,7 +93,7 @@ def audio_feat(name):
     '''apply the function'''
     _audiofeat = get_audio_features(_track_df['id'])
     
-    '''create columns names for the dataframe'''
+    '''creat columns names for the dataframe'''
     _audiofeat = pd.DataFrame(_audiofeat, columns = ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness',
     'instrumentalness', 'liveness', 'valence', 'tempo', 'type', 'id', 'uri', 'track_href', 'analysis_url', 'duration_ms', 'time_signature'])
 
@@ -99,6 +104,80 @@ def audio_feat(name):
     tracks_plus_df.index += 1
 
     return (json.dumps(json.loads(tracks_plus_df.to_json(orient='index')), indent=2))
+
+
+@app.route('/predict/<track_id>', methods=['GET', 'POST'])
+def dj_rec(track_id):
+    neighbors=4
+    max_distance=5.0
+    rel_artists = sp.artist_related_artists(sp.track(track_id=track_id)['artists'][0]['id'])['artists']
+    artist_log = []
+    for a in rel_artists:
+        artist_log.append(a['id'])
+    feat_log = []
+    for artist in artist_log:
+        for track in sp.artist_top_tracks(artist)['tracks']:
+            feat_log.append(sp.audio_features(track['id'])[0])
+                
+    catalog = pd.DataFrame.from_dict(feat_log)
+        
+    root = pd.DataFrame.from_dict(sp.audio_features(tracks=[track_id]))
+
+    merged_df = root.append(catalog, ignore_index=True)
+        
+    dropped_df = merged_df.drop(columns=['uri', 'track_href', 'id', 'duration_ms', 'time_signature', 'mode', 'loudness', 'type', 'analysis_url'])
+    scaled_df = StandardScaler().fit_transform(dropped_df)
+    trans_array = scaled_df.copy()
+
+    trans_array[:,0] = [u*2.4 for u in trans_array[:,0]] # acousticness
+    trans_array[:,1] = [((u*u)**0.5)*u for u in trans_array[:,1]] # danceability
+    trans_array[:,2] = [u*1.7 for u in trans_array[:,2]] # energy
+    trans_array[:,3] = [u*1.4 for u in trans_array[:,3]] # instrumentalness
+    trans_array[:,4] = [u*0.9 for u in trans_array[:,4]] # key
+    trans_array[:,5] = [u*1.0 for u in trans_array[:,5]] # liveness
+    trans_array[:,6] = [u*1.0 for u in trans_array[:,6]] # speechiness
+    trans_array[:,7] = [u*1.1 for u in trans_array[:,7]] # tempo
+    trans_array[:,8] = [u*2.5 for u in trans_array[:,8]] # valence
+
+    knn = NearestNeighbors()
+    knn.fit(trans_array)
+
+    rec = knn.kneighbors(trans_array[[0]], n_neighbors=neighbors+1)
+
+    predict_response = []
+    for n in range(1,neighbors+1):
+        if rec[0][0][n] <= max_distance:
+            pred_dict = (merged_df.loc[rec[1][0][n],'id'], rec[0][0][n])
+        predict_response.append(pred_dict)
+
+    pred = pd.DataFrame(predict_response, columns=['recommendation', 'distance'])
+
+    df_predict_tracks = pd.DataFrame() # create dataframe
+
+    feat_search_artist = []
+    feat_search_song = []
+    feat_search_url = []
+    feat_search_explicit = []
+
+    for ii in pred['recommendation']:
+        artist_name = sp.track(ii)['artists'][0]['name']
+        song_name = sp.track(ii)['name']
+        url_link = sp.track(ii)['external_urls']['spotify']
+        explicit = sp.track(ii)['explicit']
+        feat_search_artist.append(artist_name)
+        feat_search_song.append(song_name)
+        feat_search_url.append(url_link)
+        feat_search_explicit.append(explicit)
+
+    # Save the results
+    df_predict_tracks['artist_name'] = feat_search_artist
+    df_predict_tracks['song_name'] = feat_search_song
+    df_predict_tracks['url'] = feat_search_url
+    df_predict_tracks['explicit'] = feat_search_explicit
+
+    df_predict_tracks.index +=1
+
+    return json.dumps(json.loads(df_predict_tracks.to_json(orient='index')), indent=2)
 
 
 if __name__ == "__main__":
