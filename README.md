@@ -92,6 +92,34 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 
   sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
+  ## Setup for Heroku app
+
+  Check the directory first 
+
+  Create file requirement text by using 'pip freeze > requirements.txt'
+
+  pipenv shell
+
+  heroku login, git remote -v, git push heroku master
+
+  ## Debug mode
+
+heroku run bash
+
+---> ls -al
+
+---> exit
+
+heroku config
+
+heroku config:set SPOTIFY_CLIENT_ID="---------------"
+
+heroku config:set SPOTIFY_CLIENT_SECRET="---------------"
+
+heroku config # > to check on the changes
+
+Add your heroku app name to the dashboard spotify app redirect URIs
+
 ## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
