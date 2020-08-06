@@ -58,11 +58,18 @@ def search(name):
     data = search_by_name(name)
     users_response = []
     for i, track in enumerate(data['tracks']['items']):
-        user_dict = (i, track['artists'][0]['name'], track['name'], track['id'], track['external_urls']['spotify'], track['explicit'])
+        user_dict = (i, track['artists'][0]['name'], track['name'], track['id'], track['external_urls']['spotify'], track['explicit'],
+        track['preview_url'], track['album']['images'][1]['url'])
         users_response.append(user_dict)
     _track_df = pd.DataFrame(users_response, columns = ['ind','artist_name', 'song_name', 
-                                                    'id', 'external_urls', 'explicit'])
+                                                    'id', 'external_urls', 'explicit', 'preview', 'image'])
     _track_df = _track_df.drop(['ind'], axis=1)
+    def get_rid_of_nulls(value):
+        if pd.isnull(value):
+            return 'http://bit.ly/2nXRRfX'
+        else:
+            return value
+    _track_df['preview'] = _track_df['preview'].apply(get_rid_of_nulls)
     _track_df.index += 1
 
     return (json.dumps(json.loads(_track_df.to_json(orient='index')), indent=2)) # orient='values', 'records', 'index', 'columns'
@@ -73,11 +80,18 @@ def audio_feat(name):
     data = search_by_name(name)
     users_response = []
     for i, track in enumerate(data['tracks']['items']):
-        user_dict = (i, track['artists'][0]['name'], track['name'], track['id'], track['external_urls']['spotify'], track['explicit'])
+        user_dict = (i, track['artists'][0]['name'], track['name'], track['id'], track['external_urls']['spotify'], track['explicit'],
+        track['preview_url'], track['album']['images'][1]['url'])
         users_response.append(user_dict)
     _track_df = pd.DataFrame(users_response, columns = ['ind','artist_name', 'song_name', 
-                                                    'id', 'external_urls', 'explicit'])
+                                                    'id', 'external_urls', 'explicit', 'preview', 'image'])
     _track_df = _track_df.drop(['ind'], axis=1)
+    def get_rid_of_nulls(value):
+        if pd.isnull(value):
+            return 'http://bit.ly/2nXRRfX'
+        else:
+            return value
+    _track_df['preview'] = _track_df['preview'].apply(get_rid_of_nulls)
 
     '''start index count from 1 instead of 0'''
     _track_df.index += 1
@@ -158,22 +172,38 @@ def dj_rec(track_id):
     feat_search_song = []
     feat_search_url = []
     feat_search_explicit = []
+    feat_search_preview = []
+    feat_search_image = []
 
     for ii in pred['recommendation']:
         artist_name = sp.track(ii)['artists'][0]['name']
         song_name = sp.track(ii)['name']
         url_link = sp.track(ii)['external_urls']['spotify']
         explicit = sp.track(ii)['explicit']
+        preview = sp.track(ii)['preview_url']
+        image = sp.track(ii)['album']['images'][1]['url']
         feat_search_artist.append(artist_name)
         feat_search_song.append(song_name)
         feat_search_url.append(url_link)
         feat_search_explicit.append(explicit)
+        feat_search_preview.append(preview)
+        feat_search_image.append(image)
 
     # Save the results
     df_predict_tracks['artist_name'] = feat_search_artist
     df_predict_tracks['song_name'] = feat_search_song
     df_predict_tracks['url'] = feat_search_url
     df_predict_tracks['explicit'] = feat_search_explicit
+    df_predict_tracks['preview'] = feat_search_preview
+    df_predict_tracks['image'] = feat_search_image
+
+    def get_rid_of_nulls(value):
+        if pd.isnull(value):
+            return 'http://bit.ly/2nXRRfX'
+        else:
+            return value
+
+    df_predict_tracks['preview'] = df_predict_tracks['preview'].apply(get_rid_of_nulls)
 
     df_predict_tracks.index +=1
 
