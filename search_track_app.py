@@ -64,6 +64,8 @@ def search(name):
     _track_df = pd.DataFrame(users_response, columns = ['ind','artist_name', 'song_name', 
                                                     'id', 'external_urls', 'explicit', 'preview', 'image'])
     _track_df = _track_df.drop(['ind'], axis=1)
+    
+    # Function that get rid of null values by placing url of your choosing
     def get_rid_of_nulls(value):
         if pd.isnull(value):
             return 'http://bit.ly/2nXRRfX'
