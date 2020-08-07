@@ -104,6 +104,12 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 
 - Add your heroku app name to the dashboard spotify app redirect URIs
 
+## Documentation
+
+See [Backend Documentation](https://github.com/Lambda-School-Labs/djhelper-be) for details on the backend of our project.
+
+See [Front End Documentation](https://github.com/Lambda-School-Labs/djhelper-fe) for details on the front end of our project.
+
 ## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
@@ -139,10 +145,3 @@ Remember that this project is licensed under the MIT license, and by submitting 
 ### Attribution
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
-
-## Documentation
-
-See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
-
-See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.
-
