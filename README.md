@@ -10,18 +10,7 @@ You can find the project at [https://www.dj-helper.com/](https://www.dj-helper.c
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Edudeiko)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/maxim371)             |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ed-dudeiko-06384a195/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/maxwell-kwarteng-b08459b7/) |
 
-
-🚫 5️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
-
 ## Project Overview
-
 
 1️⃣ [Trello Board](https://trello.com/b/udZnuhhk/dj-helper)
 
@@ -49,26 +38,21 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 - tempo
 
 ### Data Sources
-🚫  Add to or delete souce links as needed for your project
 
-
--   [Spotify_API](https://developer.spotify.com/documentation/web-api/)
--   [Spotipy](https://spotipy.readthedocs.io/en/2.12.0/#getting-started)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
+- [Spotify_API](https://developer.spotify.com/documentation/web-api/)
+- [Spotipy](https://spotipy.readthedocs.io/en/2.12.0/#getting-started)
 
 ### Python Notebooks
 
 [Create_Dataset](https://github.com/Lambda-School-Labs/djhelper-ds/blob/master/update_dataset.ipynb)
 
-[Python Notebook 2](🚫add link to python notebook here)
+[Response_200](https://github.com/Lambda-School-Labs/djhelper-ds/blob/cleaning_code/notebooks/token_200_response.ipynb)
 
-[Python Notebook 3](🚫add link to python notebook here)
+[applied_model](https://github.com/Lambda-School-Labs/djhelper-ds/blob/cleaning_code/notebooks/final_model.ipynb)
 
 ### 3️⃣ How to connect to the data API
 
-- create .env file with the keys values in your working folder.
+- create .env file with the key values in your working folder.
   
   SPOTIPY_CLIENT_ID="your_client_ID"
 
@@ -92,33 +76,39 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 
   sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-  ## Setup for Heroku app
+## Setup for Heroku app
 
-  Check the directory first 
+- Check the directory first
 
-  Create file requirement text by using 'pip freeze > requirements.txt'
+- Create file requirement text by using 'pip freeze > requirements.txt'
 
-  pipenv shell
+- pipenv shell
 
-  heroku login, git remote -v, git push heroku master
+- heroku login, git remote -v, git push heroku master
 
-  ## Debug mode
+## Debug mode
 
-heroku run bash
+- heroku run bash
 
----> ls -al
+- ---> ls -al
 
----> exit
+- ---> exit
 
-heroku config
+- heroku config
 
-heroku config:set SPOTIFY_CLIENT_ID="---------------"
+- heroku config:set SPOTIFY_CLIENT_ID="---------------"
 
-heroku config:set SPOTIFY_CLIENT_SECRET="---------------"
+- heroku config:set SPOTIFY_CLIENT_SECRET="---------------"
 
-heroku config # > to check on the changes
+- heroku config # > to check on the changes
 
-Add your heroku app name to the dashboard spotify app redirect URIs
+- Add your heroku app name to the dashboard spotify app redirect URIs
+
+## Documentation
+
+See [Backend Documentation](https://github.com/Lambda-School-Labs/djhelper-be) for details on the backend of our project.
+
+See [Front End Documentation](https://github.com/Lambda-School-Labs/djhelper-fe) for details on the front end of our project.
 
 ## Contributing
 
@@ -155,10 +145,3 @@ Remember that this project is licensed under the MIT license, and by submitting 
 ### Attribution
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
-
-## Documentation
-
-See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
-
-See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.
-
