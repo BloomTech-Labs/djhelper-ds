@@ -44,65 +44,38 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 
 ### Python Notebooks
 
-[Create_Dataset](https://github.com/Lambda-School-Labs/djhelper-ds/blob/master/update_dataset.ipynb)
-
-[Response_200](https://github.com/Lambda-School-Labs/djhelper-ds/blob/cleaning_code/notebooks/token_200_response.ipynb)
-
-[applied_model](https://github.com/Lambda-School-Labs/djhelper-ds/blob/cleaning_code/notebooks/final_model.ipynb)
+[Notebooks](https://github.com/Lambda-School-Labs/djhelper-ds/tree/master/notebooks)
 
 ### 3️⃣ How to connect to the data API
 
-- create .env file with the key values in your working folder.
-  
-  SPOTIPY_CLIENT_ID="your_client_ID"
+- Search for songs https://sp-search.herokuapp.com/track_search_ready/{text}
 
-  SPOTIPY_CLIENT_SECRET="your_client_secret_key"
-  
-  from dotenv import load_dotenv
+- Search for songs with audio features https://sp-search.herokuapp.com/audio_features/{text}
 
-  import os
-  
-- you can check your keys variables before running API client credentials.
-  
-  print("CLIENT ID:", os.environ.get("SPOTIPY_CLIENT_ID"))
-
-  print("CLIENT SECRET:", os.environ.get("SPOTIPY_CLIENT_SECRET"))
-  
-  import spotipy
-
-  from spotipy.oauth2 import SpotifyClientCredentials
-  
-  client_credentials_manager = SpotifyClientCredentials()
-
-  sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+- Find similar songs https://sp-search.herokuapp.com/predict/{track_id}
 
 ## Setup for Heroku app
 
 - Check the directory first
-
 - Create file requirement text by using 'pip freeze > requirements.txt'
-
 - pipenv shell
-
-- heroku login, git remote -v, git push heroku master
+- heroku login
+- git remote -v
+- git push heroku master
 
 ## Debug mode
 
 - heroku run bash
-
 - ---> ls -al
-
 - ---> exit
-
 - heroku config
-
 - heroku config:set SPOTIFY_CLIENT_ID="---------------"
-
 - heroku config:set SPOTIFY_CLIENT_SECRET="---------------"
-
 - heroku config # > to check on the changes
 
-- Add your heroku app name to the dashboard spotify app redirect URIs
+## Important
+
+- Add your heroku app name to the spotify app --> dashboard --> redirect URIs
 
 ## Documentation
 
