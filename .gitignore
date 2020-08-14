@@ -143,9 +143,18 @@ final_df.json
 result_2.json
 df_prepare.csv
 json_df_reduced.json
+data/db.sqlite3
+data/json_for_backend.json
+data/Dj_Helper_DS_flow.png
+data/predicted.csv
+data/predicted_db.sqlite3
+data/predicted_df.json
+data/spotify_dataset_recommendations.csv
+data/spotify_dataset_recommendations.json
 
 # json
 conf.json
 
 # other
 .cache-eddie82-us
+data/json_for_backend.json
