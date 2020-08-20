@@ -1,14 +1,14 @@
-# 1️⃣ DJ Helper
+# 1️⃣ API end points for DJ-Helper app
 
 You can find the project at [https://www.dj-helper.com/](https://www.dj-helper.com/).
 
 ## 2️⃣ Contributors
 
-|                                       [Evgenii Dudeiko](https://github.com/Edudeiko)                                        |                                       [Maxwell Kwarteng](https://github.com/maxim371)                                        |
+|                                       [Evgenii Dudeiko](https://edudeiko.github.io)                                        |                                                                               |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |  
-|                      [<img src="https://i.ibb.co/MsbFVHQ/linkedin-pic.jpg" width = "200" />](https://github.com/Edudeiko)                       |                      [<img src="https://i.ibb.co/2kYGL7W/max.jpg" width = "200" />](https://github.com/maxim371)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Edudeiko)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/maxim371)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ed-dudeiko-06384a195/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/maxwell-kwarteng-b08459b7/) |
+|                      [<img src="https://i.ibb.co/MsbFVHQ/linkedin-pic.jpg" width = "200" />](https://github.com/Edudeiko)                       |                                             |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Edudeiko)                 ||
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ed-dudeiko-06384a195/) ||
 
 ## Project Overview
 
@@ -54,7 +54,7 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 
 - Find similar songs https://sp-search.herokuapp.com/predict/{track_id}
 
-## Setup for Heroku app
+## Heroku
 
 - Check the directory first
 - Create file requirement text by using 'pip freeze > requirements.txt'
@@ -76,12 +76,6 @@ DJ helper uses an unsupervised k-neighbors model to predict similar songs. The m
 ## Important
 
 - Add your heroku app name to the spotify app --> dashboard --> redirect URIs
-
-## Documentation
-
-See [Backend Documentation](https://github.com/Lambda-School-Labs/djhelper-be) for details on the backend of our project.
-
-See [Front End Documentation](https://github.com/Lambda-School-Labs/djhelper-fe) for details on the front end of our project.
 
 ## Contributing
 
@@ -118,3 +112,9 @@ Remember that this project is licensed under the MIT license, and by submitting 
 ### Attribution
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
+
+## Documentation
+
+See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
+
+See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.
