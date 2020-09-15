@@ -151,6 +151,12 @@ data/predicted_db.sqlite3
 data/predicted_df.json
 data/spotify_dataset_recommendations.csv
 data/spotify_dataset_recommendations.json
+api_calls.ipynb
+explor_1.ipynb
+explore_data.ipynb
+notebooks/final_model-TIME_TEST.ipynb
+sqlite_connection.ipynb
+visualization.ipynb
 
 # json
 conf.json
